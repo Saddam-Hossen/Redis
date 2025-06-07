@@ -34,17 +34,21 @@ Edit the Redis config file:
 sudo nano /etc/redis/redis.conf
 ```
 
-* To enable password authentication, find and set:
+### ✅ Recommended for `systemd`:
 
-  ```ini
-  requirepass YourStrongPasswordHere
-  ```
+```ini
+supervised systemd
+daemonize no
+```
+### 🔁 So your final `redis.conf` should include:
 
-* To allow remote access (if needed):
+```ini
+supervised systemd
+daemonize no
+requirepass ce18046
+bind 0.0.0.0
+```
 
-  ```ini
-  bind 0.0.0.0
-  ```
 
 Restart Redis:
 
